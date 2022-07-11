@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        <!--静态注册失去焦点事件-->
+        function onblurfun() {
+            //console是控制台对象，是由js语言提供，专门用来向浏览器的控制台打印输出，用于测试使用
+            //log是打印方法
+            console.log("静态注册失去焦点事件");
+        }
+        //动态注册失去焦点事件
+        window.onload = function () {
+            var obj = document.getElementById("psw1");
+            obj.onblur = function () {
+                console.log("动态注册失去焦点事件");
+            };
+        };
+    </script>
+</head>
+<body>
+<table align="center">
+    <tr>
+        <td> 用户名：</td>
+        <td><input type="text" onblur="onblurfun()"><br></td>
+    </tr>
+
+    <tr>
+        <td>密码：</td>
+        <td>  <input  type="password" id="psw1"></td>
+    </tr>
+
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onclickfun() {
+            var obj=document.getElementById("ol01")
+            var usernameText=obj.value;
+            var patt=/^\w{5,12}$/;
+            var usernamespanobj=document.getElementById("usernamespan");
+            //innerhtml  表示起始标签和结束标签中的内容
+            //innerHtml 可读可写
+            if (patt.test(usernameText)) {
+                // alert("用户名合法");
+                usernamespanobj.innerHTML="用户名合法！";
+            } else {
+                // alert("用户名不合法");
+                usernamespanobj.innerHTML = "用户名不合法";
+            }
+
+        }
+    </script>
+</head>
+<body>
+用户名：<input type="text" id="ol01" value="">
+<span style="color:red" id="usernamespan"></span>
+<button onclick="onclickfun()">校验</button>
+</body>
+</html>

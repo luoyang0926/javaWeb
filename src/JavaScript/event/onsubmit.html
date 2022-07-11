@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function onsubmitfun() {
+            alert("静态注册提交事件")
+            return false;
+        }
+        //动态
+        window.onload = function () {
+            var obj = document.getElementById("form01");
+            obj.onsubmit = function () {
+                alert("动态注册提交事件");
+            };
+        };
+    </script>
+</head>
+<body>
+  <form action="http://www.baidu.com" method="get" onsubmit=" return onsubmitfun()">
+      <input type="submit" value="静态注册">
+  </form>
+  <form action="http://www.baidu.com" id="form01" method="get">
+      <input type="submit" value="动态注册">
+  </form>
+
+</body>
+</html>

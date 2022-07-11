@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //静态注册onchange事件
+        function onchangefun() {
+            alert("球员变化了");
+        }
+        //动态
+        window.onload = function () {
+            var obj = document.getElementById("sel01");
+            obj.onchange = function () {
+                alert("球员变化了动态")
+            };
+        };
+    </script>
+</head>
+<body>
+
+请选择你的球员：
+<select onchange="onchangefun() ">
+    <option>--球员--</option>
+    <option>库里</option>
+    <option>克莱</option>
+    <option>格林</option>
+    <option>普洱</option>
+
+</select>
+请选择你的球员：
+<select id="sel01">
+    <option>--球员--</option>
+    <option>一哥</option>
+    <option>鲁尼</option>
+    <option>佩顿</option>
+    <option>别利察</option>
+</select>
+</body>
+</html>
